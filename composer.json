@@ -2,7 +2,7 @@
     "name": "minei/tp_sport",
     "autoload": {
         "psr-4": {
-            "Minei\\TpSport\\": "src/"
+            "poo\\": "src/"
         }
     },
     "authors": [
