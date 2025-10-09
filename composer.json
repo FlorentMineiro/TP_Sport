@@ -1,0 +1,15 @@
+{
+    "name": "minei/tp_sport",
+    "autoload": {
+        "psr-4": {
+            "Minei\\TpSport\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Florent Mineiro",
+            "email": "florent.mineiro.93@gmail.com"
+        }
+    ],
+    "require": {}
+}
