@@ -4,6 +4,7 @@ require __DIR__ . '/vendor/autoload.php';
 use poo\Sport;
 use poo\Club;
 use poo\SportBallon\SportBallon as SportBallon;
+use poo\SportRelais\SportRelais as SportRelais;
 
 
 // Init les clubs
@@ -17,7 +18,7 @@ $sb = new SportBallon("Basketball", 5, 35, 45);
 $club[1]->AjouterSport($sb);
 
 // Les sports de PSG
-/*$sport1 = new Sport("Javelot", 1);
+$sport1 = new Sport("Javelot", 1);
 $sport2 = new Sport("Judo", 1);
 $sportBallon1 = new SportBallon("Football", 11, 68, 105);
 $sportBallon2 = new SportBallon("Handball", 7, 35, 65);
@@ -36,4 +37,4 @@ $sportRelais2 = new SportRelais("100m", 100, 1);
 $club[3]->AjouterSport($sport3);
 $club[3]->AjouterSport($sportBallon3);
 $club[3]->AjouterSport($sportBallon4);
-$club[3]->AjouterSport($sportRelais2);*/
+$club[3]->AjouterSport($sportRelais2);

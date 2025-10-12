@@ -6,7 +6,7 @@ class Sport
     private string $nomSport;
     private int $nbJoueurs;
 
-    public function __construct(string $nomSport,int $nbJoueurs )
+    public function __construct(string $nomSport,int $nbJoueurs,string $descritption =  null)
     {
         $this->nomSport=$nomSport;
         $this->nbJoueurs=$nbJoueurs;
