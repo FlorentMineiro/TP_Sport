@@ -16,7 +16,7 @@ class Sport
     {
         return $this->nomSport;
     } 
-     public function getGetDescritpion() : string 
+     public function getDescritpion() : string 
     {
         return $this->description;
     } 

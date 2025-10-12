@@ -40,8 +40,45 @@ $club[3]->AjouterSport($sportBallon3);
 $club[3]->AjouterSport($sportBallon4);
 $club[3]->AjouterSport($sportRelais2);
 
-echo "LISTE DES CLUBS "."\n";
+echo "LISTE DES CLUBS "."<br>";
  foreach($club as $index)
  {
-    echo $index->getIdClub()." - ".$index->getNomClub().$index->getNbPoints()."\n";
+    echo $index->getIdClub()." - ".$index->getNomClub()." ".$index->getNbPoints()."<br>";
  }
+
+ echo "LISTE DES SPORTS DU CLUB DIJON"."<br>";
+ echo "DESCRITPTION Nom:".$sb->getNomSport()." Nb:".$sb->getNbJoueurs()." Longueur:".$sb->getLongueur()." Largeur:".$sb->getLargeur()."<br>";
+
+ echo "LISTE DES SPORTS DU CLUB PSG"."<br>";
+ foreach($club[2]->getLesSports() as $indexPSG)
+ {
+   
+    if ($indexPSG instanceof SportBallon)
+      {
+         echo "DESCRITPTION Nom:".$indexPSG->getNomSport()." Nb:".$indexPSG->getNbJoueurs()." Longueur:".$indexPSG->getLongueur()." Largeur:".$indexPSG->getLargeur()."<br>";
+      }elseif($indexPSG instanceof SportRelais)
+      {
+         echo "DESCRITPTION Nom:".$indexPSG->getNomSport()." Nb:".$indexPSG->getNbJoueurs()." Distance:".$indexPSG->getDistance()."<br>";
+      }else
+      {
+         echo "DESCRITPTION Nom:".$indexPSG->getNomSport()." Nb:".$indexPSG->getNbJoueurs()."<br>";
+      } 
+ }
+
+
+ echo "LISTE DES SPORTS DU CLUB Nantes"."<br>";
+ foreach($club[3]->getLesSports() as $indexNantes)
+ {
+   
+    if ($indexNantes instanceof SportBallon)
+      {
+         echo "DESCRITPTION Nom:".$indexNantes->getNomSport()." Nb:".$indexNantes->getNbJoueurs()." Longueur:".$indexNantes->getLongueur()." Largeur:".$indexNantes->getLargeur()."<br>";
+      }elseif($indexNantes instanceof SportRelais)
+      {
+         echo "DESCRITPTION Nom:".$indexNantes->getNomSport()." Nb:".$indexNantes->getNbJoueurs()." Distance:".$indexNantes->getDistance()."<br>";
+      }else
+      {
+         echo "DESCRITPTION Nom:".$indexNantes->getNomSport()." Nb:".$indexNantes->getNbJoueurs()."<br>";
+      } 
+ }
+
