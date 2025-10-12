@@ -2,9 +2,10 @@
 
 require __DIR__ . '/vendor/autoload.php';
 use poo\Sport;
-use poo\Club;
+
 use poo\SportBallon\SportBallon as SportBallon;
 use poo\SportRelais\SportRelais as SportRelais;
+use poo\Club as Club;
 
 
 // Init les clubs
@@ -38,3 +39,9 @@ $club[3]->AjouterSport($sport3);
 $club[3]->AjouterSport($sportBallon3);
 $club[3]->AjouterSport($sportBallon4);
 $club[3]->AjouterSport($sportRelais2);
+
+echo "LISTE DES CLUBS "."\n";
+ foreach($club as $index)
+ {
+    echo $index->getIdClub()." - ".$index->getNomClub().$index->getNbPoints()."\n";
+ }

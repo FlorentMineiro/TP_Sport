@@ -1,5 +1,6 @@
 <?php
 namespace poo;
+
 class Club 
 {
     private int $idClub;
