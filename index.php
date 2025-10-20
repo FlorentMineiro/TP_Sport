@@ -1,6 +1,7 @@
 <?php
 
 require __DIR__ . '/vendor/autoload.php';
+
 use poo\Sport;
 
 use poo\SportBallon\SportBallon as SportBallon;
@@ -40,13 +41,42 @@ $club[3]->AjouterSport($sportBallon3);
 $club[3]->AjouterSport($sportBallon4);
 $club[3]->AjouterSport($sportRelais2);
 
+$id = isset($_GET['id'])?(int)$_GET['id']:0;
+
+if($id && isset($_GET['id']))
+{
+   $clubSelectionne = $club[$id];
+}else
+{
+   $clubSelectionne = null;
+}
+
 echo "LISTE DES CLUBS "."<br>";
  foreach($club as $index)
  {
-    echo $index->getIdClub()." - ".$index->getNomClub()." ".$index->getNbPoints()."<br>";
+    echo '<a href="index.php?id='.$index->getIdClub().'">'.$index->getIdClub()." - ".$index->getNomClub()." ".$index->getNbPoints()."</a>"."<br>";
  }
 
- echo "LISTE DES SPORTS DU CLUB DIJON"."<br>";
+ if ($clubSelectionne)
+ {
+   echo "<h2>"."LISTE DES SPORTS DU CLUB ".$clubSelectionne->getNomClub()."</h2>";
+   foreach($clubSelectionne->getLesSports() as $sport)
+   {
+      if ($sport instanceof SportBallon)
+      {
+         echo "DESCRITPTION Nom:".$sport->getNomSport()." Nb:".$sport->getNbJoueurs()." Longueur:".$sport->getLongueur()." Largeur:".$sport->getLargeur()."<br>";
+      }elseif($sport instanceof SportRelais)
+      {
+          echo "DESCRITPTION Nom:".$sport->getNomSport()." Nb:".$sport->getNbJoueurs()." Distance:".$sport->getDistance()."<br>";
+      }else
+      {
+            echo "DESCRITPTION Nom:".$sport->getNomSport()." Nb:".$sport->getNbJoueurs()."<br>";
+      }
+
+   }
+ }
+
+ /*echo "LISTE DES SPORTS DU CLUB DIJON"."<br>";
  echo "DESCRITPTION Nom:".$sb->getNomSport()." Nb:".$sb->getNbJoueurs()." Longueur:".$sb->getLongueur()." Largeur:".$sb->getLargeur()."<br>";
 
  echo "LISTE DES SPORTS DU CLUB PSG"."<br>";
@@ -80,5 +110,5 @@ echo "LISTE DES CLUBS "."<br>";
       {
          echo "DESCRITPTION Nom:".$indexNantes->getNomSport()." Nb:".$indexNantes->getNbJoueurs()."<br>";
       } 
- }
+ }*/
 
